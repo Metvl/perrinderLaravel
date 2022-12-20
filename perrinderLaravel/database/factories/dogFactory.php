@@ -18,7 +18,8 @@ class dogFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'img' => $this->faker->sentence,
+            //'img' => $this->faker->unique()->url,
+            'img' => 'https://dog.ceo/api/breeds/image/random/' . $this->faker->unique()->numberBetween(1, 1000),
             'description' => $this->faker->sentence,
         ];
     }
