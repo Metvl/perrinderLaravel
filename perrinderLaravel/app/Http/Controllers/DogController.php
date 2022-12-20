@@ -30,9 +30,9 @@ class DogController extends Controller
         return $this->dogRepository->postDog($request);
     }
 
-    public function putDog(Request $request, $id)
+    public function putDog(dogRequest $request)
     {
-        return $this->dogRepository->putDog($request, $id);
+        return $this->dogRepository->putDog($request);
     }
 
     public function deleteDog($id)
