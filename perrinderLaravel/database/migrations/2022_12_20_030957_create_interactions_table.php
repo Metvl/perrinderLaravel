@@ -19,6 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('id_candidate_dog');
             $table->string('preference', 100)->nullable();
             $table->timestamps();
+            $table->foreign('id_interested_dog')->references('id')->on('dogs');
+            $table->foreign('id_candidate_dog')->references('id')->on('dogs');
         });
     }
 

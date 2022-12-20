@@ -17,4 +17,8 @@ class dog extends Model
         'img',
         'description',
     ];
+    public function interactions()
+    {
+        return $this->hasMany(dog::class);
+    }
 }
