@@ -29,7 +29,7 @@ class interactionRequest extends FormRequest
         return [
             'id_interested_dog' => 'required|integer',
             'id_candidate_dog' => 'required|integer',
-            'preference' => 'in:Accepted, Declined',
+            'preference' => 'in:Accepted,Declined',
         ];
     }
 

@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DogController;
-
+use App\Http\Controllers\InteractionController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,4 +24,10 @@ Route::prefix('dogs')->group(function () use ($router) {
     $router->post('postDog', [DogController::class, 'postDog']);
     $router->put('putDog/{id}', [DogController::class, 'putDog']);
     $router->delete('deleteDog/{id}', [DogController::class, 'deleteDog']);
+});
+
+Route::prefix('interactions')->group(function () use ($router) {
+    $router->get('getInteraction', [InteractionController::class, 'getInteraction']);
+    $router->get('getInteractionId/{id}', [InteractionController::class, 'getInteractionId']);
+    $router->post('postInteraction', [InteractionController::class, 'postInteraction']);
 });
